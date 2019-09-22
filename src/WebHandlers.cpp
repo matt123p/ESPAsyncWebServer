@@ -64,6 +64,7 @@ AsyncStaticWebHandler& AsyncStaticWebHandler::setLastModified(const char* last_m
 
 AsyncStaticWebHandler& AsyncStaticWebHandler::setLastModified(struct tm* last_modified){
   char result[30];
+  size_t strftime (char* ptr, size_t maxsize, const char* format, const struct tm* timeptr );
   strftime (result,30,"%a, %d %b %Y %H:%M:%S %Z", last_modified);
   return setLastModified((const char *)result);
 }
